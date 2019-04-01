@@ -28,7 +28,6 @@ SELECT * FROM Customers WHERE CustomerName LIKE '%market%'
 
 INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country) VALUES ("The Shire", "Bilbo Baggins", "1 Hobbit Hole", "Bag End", 111, "Middle Earth") 
 
-
 ## update _Bilbo Baggins_ record so that the postal code changes to _"11122"_.
 
 UPDATE Customers SET PostalCode = 11122 WHERE CustomerId = 92
@@ -40,7 +39,6 @@ SELECT * from Customers join Orders on Customers.CustomerId = Orders.CustomerId 
 ## list customers names and the number of orders per customer. Sort the list by number of orders in descending order. _Ernst Handel_ should be at the top with 10 orders followed by _QUICK-Stop_, _Rattlesnake Canyon Grocery_ and _Wartian Herkku_ with 7 orders each.
 
 SELECT CustomerName, count(Orders.CustomerID) FROM Customers JOIN Orders ON Customers.CustomerID = Orders.CustomerID GROUP BY Orders.CustomerID ORDER BY count(Orders.CustomerID) DESC
-
 
 ## list orders grouped by customer's city showing number of orders per city. Returns 58 Records with _Aachen_ showing 2 orders and _Albuquerque_ showing 7 orders.
 
